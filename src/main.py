@@ -33,13 +33,13 @@ def distribute_expenses(participants_f, expenses_f):
 if __name__ == '__main__':
     nights = 3
     participants_with_nights = {
-        "Koch": 3,
-        "voGo": 3,
-        "Buschi": 3,
-        "Born": 3,
-        "Kroeh": 3,
-        "Breyer": 3,
-        "Aigner": 1
+        "K": 3,
+        "V": 3,
+        "Bu": 3,
+        "Bo": 3,
+        "Kr": 3,
+        "Br": 3,
+        "A": 1
     }
     expenses = [
         364.26,
@@ -51,7 +51,9 @@ if __name__ == '__main__':
         0.0
     ]
     sum_personnights = sum(participants_with_nights.values())
-    participants_with_costfactor = {p: n / sum_personnights * len(participants_with_nights) for p, n in participants_with_nights.items()}
+    participants_with_costfactor = {
+        p: n / sum_personnights * len(participants_with_nights) for p, n in participants_with_nights.items()
+    }
 
     transactions = distribute_expenses(participants_with_costfactor, expenses)
 
